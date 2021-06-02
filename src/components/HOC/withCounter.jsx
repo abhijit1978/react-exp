@@ -1,12 +1,13 @@
+import { tickStep } from "d3-array";
 import React, { Component } from "react";
 
-const withCounter = (WrappedComponent) => {
+const withCounter = (WrappedComponent, increamentBy) => {
   class WithCounter extends Component {
     state = { count: 0 };
 
     incrementCouner = () => {
       this.setState((prevState) => {
-        return { count: prevState.count + 1 };
+        return { count: prevState.count + increamentBy };
       });
     };
 
@@ -15,6 +16,7 @@ const withCounter = (WrappedComponent) => {
         <WrappedComponent
           count={this.state.count}
           incrementCouner={this.incrementCouner}
+          {...this.props}
         />
       );
     }
