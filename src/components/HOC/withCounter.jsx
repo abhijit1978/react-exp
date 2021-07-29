@@ -1,4 +1,3 @@
-import { tickStep } from "d3-array";
 import React, { Component } from "react";
 
 const withCounter = (WrappedComponent, increamentBy) => {
